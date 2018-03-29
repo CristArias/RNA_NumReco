@@ -16,6 +16,7 @@
 package Principal;
 
 import Logica.Entrenamiento;
+import Logica.OpenCV;
 import Logica.Producir;
 import Logica.Red;
 import java.io.File;
@@ -48,17 +49,21 @@ public class XOR
     public static void main(String args[]) throws IOException {
         //XOR xor = new XOR();
         Red mired= new Red();
-        Entrenamiento mientreno = new Entrenamiento();
-        Producir miproduccion = new Producir();
         
+        OpenCV oc = new OpenCV();
+        oc.digitalizar();
         
-        NeuralNet minet = mired.creacionRed();
-        NeuralNet minetsita;
-        minetsita = mientreno.creacionArchivoEntradaYTeacher(minet, inputData, outputFile);
-        
-        minetsita.join();
-
-        miproduccion.ejecutanto(minetsita, outputFile, archivoPrueba);        
+//        Entrenamiento mientreno = new Entrenamiento();
+//        Producir miproduccion = new Producir();
+//        
+//        
+//        NeuralNet minet = mired.creacionRed();
+//        NeuralNet minetsita;
+//        minetsita = mientreno.creacionArchivoEntradaYTeacher(minet, inputData, outputFile);
+//        
+//        minetsita.join();
+//
+//        miproduccion.ejecutanto(minetsita, outputFile, archivoPrueba);        
     }
     
     
