@@ -35,7 +35,7 @@ public class Producir {
             nnet.getOutputLayer().removeAllOutputs();
             
             FileInputSynapse entrada = new FileInputSynapse();//se crea y se agrega a la capa de entrada el archivo con los patrones
-            entrada.setAdvancedColumnSelector("1,2");         //que van a ser producidos.
+            entrada.setAdvancedColumnSelector("1-14");         //que van a ser producidos.
             entrada.setInputFile(new File(archivoEntrada));
  
             Layer capaEntrada = nnet.getInputLayer();

@@ -195,7 +195,7 @@ public class OpenCV {
     public void crearArchivoEntrenamiento() throws RemoteException, IOException
     {
         objArchivo = new Archivo();
-        ArrayList<String> internos = agragarUsuarioPerteneciente();
+        ArrayList<String> internos = agregarUsuarioPerteneciente();
 
         int var = objArchivo.ExistenciaArchivo("Entrenamiento.txt");
         if(var==1)
@@ -228,7 +228,7 @@ public class OpenCV {
         }
     }
     
-    public ArrayList<String> agragarUsuarioPerteneciente()
+    public ArrayList<String> agregarUsuarioPerteneciente()
     {
         ArrayList<String> vec = NombreCarpetaImagen();
         ArrayList<String> result = new ArrayList();

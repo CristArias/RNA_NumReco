@@ -32,7 +32,7 @@ public class Entrenamiento implements NeuralNetListener{
     public synchronized NeuralNet creacionArchivoEntradaYTeacher(NeuralNet nnet, String patrones, String outputfile)
     {
         FileInputSynapse inputStream = new FileInputSynapse();//se ingresa el archivo que contiene los patrones
-        inputStream.setAdvancedColumnSelector("1,2");
+        inputStream.setAdvancedColumnSelector("1-14");
         inputStream.setInputFile(new File(patrones));
         
         Layer capaentrada = nnet.getInputLayer();//el archivo de los patrones apunta a la capa de entrada de la red
@@ -43,7 +43,7 @@ public class Entrenamiento implements NeuralNetListener{
         
         FileInputSynapse samples = new FileInputSynapse(); //se ingresa el archivo que contiene las salidas deseadas
         samples.setInputFile(new File(patrones));
-        samples.setAdvancedColumnSelector("3");
+        samples.setAdvancedColumnSelector("15-18");
         
         teacher.setDesired(samples);
        
@@ -60,11 +60,11 @@ public class Entrenamiento implements NeuralNetListener{
     {
         Monitor monitor = nnet.getMonitor();//Se crea el panel de control
         
-        monitor.setLearningRate(0.8);
-        monitor.setMomentum(0.3);
+        monitor.setLearningRate(0.3);
+        monitor.setMomentum(0.22);
         monitor.addNeuralNetListener(this);
-        monitor.setTrainingPatterns(4); /* # of rows (patterns) contained in the input file */
-        monitor.setTotCicles(2000); /* How many times the net must be trained on the input patterns */
+        monitor.setTrainingPatterns(10000); /* # of rows (patterns) contained in the input file */
+        monitor.setTotCicles(1000); /* How many times the net must be trained on the input patterns */
         monitor.setLearning(true); /* The net must be trained */
         nnet.setMonitor(monitor);
         nnet.go(); /* The net starts the training job */

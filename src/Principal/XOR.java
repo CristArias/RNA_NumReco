@@ -32,7 +32,7 @@ import org.joone.net.NeuralNet;
 
 public class XOR 
 {
-    private static String inputData = "xor.txt";
+    private static String inputData = "dataset ordenado aleatoriamente.txt";
     private static String outputFile = "xorout.txt";
     
     private static String archivoPrueba = "archivoProducción.txt";
@@ -53,17 +53,17 @@ public class XOR
         OpenCV oc = new OpenCV();
         oc.digitalizar();
         
-//        Entrenamiento mientreno = new Entrenamiento();
-//        Producir miproduccion = new Producir();
-//        
-//        
-//        NeuralNet minet = mired.creacionRed();
-//        NeuralNet minetsita;
-//        minetsita = mientreno.creacionArchivoEntradaYTeacher(minet, inputData, outputFile);
-//        
-//        minetsita.join();
-//
-//        miproduccion.ejecutanto(minetsita, outputFile, archivoPrueba);        
+        Entrenamiento mientreno = new Entrenamiento();
+        Producir miproduccion = new Producir();
+        
+        
+        NeuralNet minet = mired.creacionRed();
+        NeuralNet minetsita;
+        minetsita = mientreno.creacionArchivoEntradaYTeacher(minet, inputData, outputFile);
+        
+        minetsita.join();
+
+        miproduccion.ejecutanto(minetsita, outputFile, archivoPrueba);        
     }
     
     
